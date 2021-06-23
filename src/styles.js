@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 //Styled Components
-export const StyledAbout = styled.div`
+export const StyledGeneralLayout = styled.div`
   min-height: 90vh;
   display: flex;
   align-items: center;
