@@ -6,6 +6,10 @@ import {
   StyledHide,
   StyledImage,
 } from "../styles";
+//Animations
+import { motion } from "framer-motion";
+import { tittleAnimation, fadeAnimation, imgAnimation } from "../animation";
+import Wave from "./Wave";
 
 const AboutSection = () => {
   return (
@@ -13,26 +17,31 @@ const AboutSection = () => {
       <StyledDescription>
         <div className="title">
           <StyledHide>
-            <h2>We work to make</h2>
+            <motion.h2 variants={tittleAnimation}>We work to make</motion.h2>
           </StyledHide>
           <StyledHide>
-            <h2>
+            <motion.h2 variants={tittleAnimation}>
               your <span>dreams</span> come
-            </h2>
+            </motion.h2>
           </StyledHide>
           <StyledHide>
-            <h2>true.</h2>
+            <motion.h2 variants={tittleAnimation}>true.</motion.h2>
           </StyledHide>
-          <p>
+          <motion.p variants={fadeAnimation}>
             Contact us for any photography or videography ideas that you have.
             We are a group of amazing professionals
-          </p>
-          <button>Contact Us</button>
+          </motion.p>
+          <motion.button variants={fadeAnimation}>Contact Us</motion.button>
         </div>
       </StyledDescription>
       <StyledImage>
-        <img src={home1} alt="Employee with a camera" />
+        <motion.img
+          variants={imgAnimation}
+          src={home1}
+          alt="Employee with a camera"
+        />
       </StyledImage>
+      <Wave />
     </StyledAbout>
   );
 };
