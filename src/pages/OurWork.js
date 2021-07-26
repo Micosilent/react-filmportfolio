@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-//import animation
+//import animations
 import { motion } from "framer-motion";
 import {
   fadeAnimation,
@@ -10,12 +10,15 @@ import {
   lineAnimation,
   sliderAnimation,
 } from "../animation";
+import { useScroll } from "../components/useScroll";
 //images
 import athlete from "../img/athlete-small.png";
 import theracer from "../img/theracer-small.png";
 import goodtimes from "../img/goodtimes-small.png";
 
 const OurWork = () => {
+  const [elementMovieTheRacer, controlsMovieTheRacer] = useScroll();
+  const [elementMovieGoodTimes, controlsMovieGoodTimes] = useScroll();
   return (
     <div>
       <StyledWork
@@ -41,7 +44,12 @@ const OurWork = () => {
             </StyledHide>
           </Link>
         </StyledMovie>
-        <StyledMovie>
+        <StyledMovie
+          ref={elementMovieTheRacer}
+          variants={fadeAnimation}
+          animate={controlsMovieTheRacer}
+          initial="hidden"
+        >
           <motion.h2 variants={fadeAnimation}>The Racer</motion.h2>
           <motion.div variants={lineAnimation} className="line"></motion.div>
           <Link>
@@ -54,7 +62,12 @@ const OurWork = () => {
             </StyledHide>
           </Link>
         </StyledMovie>
-        <StyledMovie>
+        <StyledMovie
+          ref={elementMovieGoodTimes}
+          variants={fadeAnimation}
+          animate={controlsMovieGoodTimes}
+          initial="hidden"
+        >
           <motion.h2 variants={fadeAnimation}>Good Times</motion.h2>
           <motion.div variants={lineAnimation} className="line"></motion.div>
           <Link>
@@ -81,7 +94,7 @@ const StyledWork = styled(motion.div)`
     padding: 1rem 0rem;
   }
 `;
-const StyledMovie = styled.div`
+const StyledMovie = styled(motion.div)`
   padding-bottom: 10rem;
   .line {
     height: 0.5rem;
