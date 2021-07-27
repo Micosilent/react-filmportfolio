@@ -1,7 +1,7 @@
 import React from "react";
 //Animations
 import { motion } from "framer-motion";
-import { pageAnimation, tittleAnimation } from "../animation";
+import { pageAnimation, titleAnimation } from "../animation";
 import styled from "styled-components";
 
 const ContactUs = () => {
@@ -12,26 +12,26 @@ const ContactUs = () => {
       initial="hidden"
       animate="show"
     >
-      <StyledTittle>
+      <StyledTitle>
         <StyledHide>
-          <motion.h2 variants={tittleAnimation}>Get in touch.</motion.h2>
+          <motion.h2 variants={titleAnimation}>Get in touch.</motion.h2>
         </StyledHide>
-      </StyledTittle>
+      </StyledTitle>
       <div>
         <StyledHide>
-          <StyledSocial variants={tittleAnimation}>
+          <StyledSocial variants={titleAnimation}>
             <StyledCircle />
             <h2>Send Us a Message</h2>
           </StyledSocial>
         </StyledHide>
         <StyledHide>
-          <StyledSocial variants={tittleAnimation}>
+          <StyledSocial variants={titleAnimation}>
             <StyledCircle />
             <h2>Send and email</h2>
           </StyledSocial>
         </StyledHide>
         <StyledHide>
-          <StyledSocial variants={tittleAnimation}>
+          <StyledSocial variants={titleAnimation}>
             <StyledCircle />
             <h2>Send us a Tweet</h2>
           </StyledSocial>
@@ -48,7 +48,7 @@ const StyledContact = styled(motion.div)`
   background-color: white;
 `;
 
-const StyledTittle = styled(motion.div)`
+const StyledTitle = styled(motion.div)`
   margin: 4rem;
   color: black;
 `;
