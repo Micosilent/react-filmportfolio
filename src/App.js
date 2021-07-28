@@ -11,6 +11,7 @@ import MovieDetail from "./pages/MovieDetail";
 import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
 //Animation
 import { AnimatePresence } from "framer-motion";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   // const location = useLocation();
@@ -18,6 +19,9 @@ function App() {
   return (
     <div className="App">
       <GlobalStyle />
+      <ScrollToTop />{" "}
+      {/* this component scrolls the page back to the top when
+      you change routes*/}
       <Nav />
       <Router>
         <Route
