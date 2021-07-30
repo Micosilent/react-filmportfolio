@@ -76,6 +76,9 @@ const StyledServices = styled(StyledGeneralLayout)`
 const StyledCards = styled.div`
   display: flex;
   flex-wrap: wrap;
+  @media (max-width: 1250px) {
+    justify-content: center;
+  }
 `;
 const StyledCard = styled.div`
   flex-basis: 20rem;
